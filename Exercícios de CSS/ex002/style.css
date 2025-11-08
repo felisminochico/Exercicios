@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@keyframes mino{
+    0%{
+        transform: translateX(0px);
+    }
+
+    40%{
+        transform: translate(-200px);
+    }
+
+    70%{
+        transform: translate(400px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    align-content: center;
+    background-color: gray;
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+div{
+    
+    background-color: rgb(3, 65, 3);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 20px 10px;
+    text-align: center;
+    transition: all 1s;
+    width: 150px;
+}
+
+div:hover{
+    animation: mino 1s linear infinite;
+    background-color: blue;
+}

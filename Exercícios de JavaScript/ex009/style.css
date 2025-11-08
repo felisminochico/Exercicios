@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+@keyframes teste{
+    0%{
+        background-color: white;
+        color: black;
+    }
+
+    10%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    20%{
+        background-color: white;
+        color: black;
+    }
+
+    30%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    40%{
+        background-color: white;
+        color: black;
+    }
+
+    50%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    60%{
+        background-color: white;
+        color: black;
+    }
+
+    70%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    80%{
+        background-color: white;
+        color: black;
+    }
+
+    90%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    95%{
+        background-color: white;
+        color: black;
+    }
+
+    100%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+}
+
+@keyframes teste2{
+    0%{
+        background-color: white;
+        color: black;
+    }
+
+    10%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    20%{
+        background-color: white;
+        color: black;
+    }
+
+    30%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    40%{
+        background-color: white;
+        color: black;
+    }
+
+    50%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    60%{
+        background-color: white;
+        color: black;
+    }
+
+    70%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    80%{
+        background-color: white;
+        color: black;
+    }
+
+    90%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    95%{
+        background-color: white;
+        color: black;
+    }
+
+    100%{
+        background-color: red;
+        color: white;
+    }
+}
+
+@keyframes pontosVidas{
+    0%{
+        opacity: 1;
+    }
+
+    0.1%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes gradiente{
+    0%{
+        background-position: 0% 100%;
+        color: white;
+    }
+
+    50%{
+        background-position: 50% 100%;
+        color: white;
+    }
+
+    100%{
+        background-position: 100% 100%;
+        color: black;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    animation: gradiente 6s infinite alternate;
+    background-image: linear-gradient(45deg, #05056e, purple, #30ffaa);
+    background-repeat: no-repeat;
+    background-size: 500%;
+    padding: 40px 18px 18px 18px;
+}
+
+header > h1{
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+}
+
+header > p{
+    padding: 10px 6px 40px 10px;
+    text-align: center;
+}
+
+header > nav{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+    row-gap: 8px;
+}
+
+main{
+    background-color: rgb(65, 64, 64);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.781);
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+main > h1{
+    color: aliceblue;
+    font-weight: normal;
+    padding: 20px;
+    text-align: center;
+}
+
+main > h2{
+    color: rgb(4, 115, 189);
+    padding: 12px 0px 10px 0px;
+    text-align: center;
+}
+
+section{
+    border: 2px solid rgb(29, 23, 23);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px 0px;
+    margin: 0px auto 20px auto;
+    max-width: 500px;
+    padding: 10px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.resultados-section-1, .resultados-section-2, .resultados-section-3, .resultados-section-4{
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: 6px;
+    width: 90%;
+}
+
+#section-2, #section-3, #section-4, #titulo-2, #titulo-3, #titulo-4{
+    opacity: 0.1;
+}
+
+footer{
+    animation: gradiente 6s alternate infinite;
+    background-image: linear-gradient(45deg, #05056e, purple, #30ffaa);
+    background-repeat: no-repeat;
+    background-size: 500%;
+    display: grid;
+    padding: 50px;
+    row-gap: 10px;
+    text-align: center;
+}

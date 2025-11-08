@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Alunos</h1>
+        <p>Escola Politécnica do Namibe Pascoal Luvualu</p>
+    </header>
+
+    <main>
+        <div id="opcoes">
+            <div id="formulario">
+                <p>Nome: <input type="text" name="nome" id="nome"></p>
+                <p>Idade: <input type="text" name="idade" id="idade"></p>
+                <p>Curso: <select name="cursos" id="cursos">
+                    <optgroup label="Engenharias">
+                        <option value="Engenharia Informática">Engenharia Informática</option>
+                        <option value="Engenharia Elétrica">Engenharia Elétrica</option>
+                        <option value="Engenharia Mecânica">Engenharia Mecânica</option>
+                        <option value="Engenharia Química">Engenharia Química</option>
+                        <option value="Engenharia Eletrônica">Engeharia Eletrônica</option>
+                        <option value="Ciências da Computação">Ciências da Computação</option>
+                    </optgroup>
+                </select></p>
+                <p>ID: <input type="number" name="id" id="id"></p>
+            </div>
+
+            <div id="botoes">
+                <button id="btn-cadastrar">Cadastrar</button>
+                <button id="btn-consultar">Consultar</button>
+                <button id="btn-atualizar">Atualizar</button>
+                <button id="btn-remover">Remover</button>
+            </div>
+        </div>
+
+        <div id="tabela">
+            Resultado...
+        </div>
+    </main>
+    
+    <footer>
+        <p>Desenvovlido por <strong><em>Felismino Chico</em></strong></p>
+    </footer>
+
+    <script src="teste.js" type="text/javascript"></script>
+</body>
+</html>

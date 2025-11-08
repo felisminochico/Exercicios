@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercitando..</title>
+</head>
+<body onscroll="rolar()">
+    <div id="container">
+        <div class="filhos-1"></div>
+        <div class="filhos-2"></div>
+
+    <p><button>Mostar Botão</button></p>
+    <p><button>Esconder Botão</button></p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam totam neque, quaerat dolorem magnam, assumenda, veniam laudantium odio aspernatur nulla reiciendis placeat facere officiis necessitatibus cumque architecto dignissimos a nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laborum adipisci iste praesentium aliquam velit est labore sunt consequatur dolorem nihil non, cupiditate ab neque laboriosam animi earum porro quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis ipsa aspernatur corrupti eaque iure! Dignissimos, minus aperiam illum voluptatem eveniet dolor rerum saepe quibusdam libero animi deserunt corrupti nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis vitae eum alias vero aliquid harum exercitationem magnam beatae hic, cum mollitia libero? Odio ut explicabo sequi dicta aperiam aspernatur.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam totam neque, quaerat dolorem magnam, assumenda, veniam laudantium odio aspernatur nulla reiciendis placeat facere officiis necessitatibus cumque architecto dignissimos a nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laborum adipisci iste praesentium aliquam velit est labore sunt consequatur dolorem nihil non, cupiditate ab neque laboriosam animi earum porro quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis ipsa aspernatur corrupti eaque iure! Dignissimos, minus aperiam illum voluptatem eveniet dolor rerum saepe quibusdam libero animi deserunt corrupti nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis vitae eum alias vero aliquid harum exercitationem magnam beatae hic, cum mollitia libero? Odio ut explicabo sequi dicta aperiam aspernatur.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam totam neque, quaerat dolorem magnam, assumenda, veniam laudantium odio aspernatur nulla reiciendis placeat facere officiis necessitatibus cumque architecto dignissimos a nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laborum adipisci iste praesentium aliquam velit est labore sunt consequatur dolorem nihil non, cupiditate ab neque laboriosam animi earum porro quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis ipsa aspernatur corrupti eaque iure! Dignissimos, minus aperiam illum voluptatem eveniet dolor rerum saepe quibusdam libero animi deserunt corrupti nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis vitae eum alias vero aliquid harum exercitationem magnam beatae hic, cum mollitia libero? Odio ut explicabo sequi dicta aperiam aspernatur.</p>
+
+    </div>
+    <script>
+        let filho2 = window.document.getElementsByClassName('filhos-2')[0];
+        let botao1 = window.document.getElementsByTagName('button')[0];
+        let botao2 = window.document.getElementsByTagName('button')[1];
+
+        filho2.addEventListener('click', tirarDiv)
+        botao1.addEventListener('click', mostrarDiv)
+
+        function rolar(){
+            if(botao1.style.top == '0'){
+                botao1.style.top = '0'
+                botao1.style.position = 'fixed'
+            }
+        }
+
+        function tirarDiv(){
+            filho2.style.display = 'none';
+        }
+
+        function mostrarDiv(){
+            filho2.style.display = 'block'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@keyframes testar{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-250px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    align-content: center;
+    display: grid;
+    height: 100%;
+    justify-content: center;
+}
+
+main > div{
+    background-color: darkblue;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}

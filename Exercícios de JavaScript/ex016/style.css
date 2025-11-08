@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: purple;
+}
+
+div#container{
+    background-color: brown;
+    display: flex;
+    margin: auto;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+}
+
+img{
+    transition: transform 1s ease;
+    width: 100%;
+}
+
+.active{
+    transform: translateX(0%);
+}
+
+button{
+    position: absolute;
+    top: 50%;
+}
+
+button#voltar{
+    left: 10px;
+}
+
+button#avancar{
+    right: 10px;
+}

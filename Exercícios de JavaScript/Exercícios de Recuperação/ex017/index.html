@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <div>
+        <button>Primeiro Botão</button>
+
+        <button>Segundo Botão</button>
+
+        <button>Terceiro Botão</button>
+    </div>
+
+    <script>
+        let div = window.document.getElementsByTagName("div")[0];
+        let botões = window.document.getElementsByTagName("button");
+
+        div.addEventListener("click", function(){
+            alert('Clicaste no elemento Pai.')
+        })
+
+        for(let c = 0; c <= 2; c++){
+            botões[c].addEventListener("click", function(event){
+                alert("Clicaste no Botão " + (c + 1));
+                event.stopImmediatePropagation();
+            })
+        }
+
+        document.write("Olá, Mundo!");
+    </script>
+</body>
+</html>

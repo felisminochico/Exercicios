@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Métodos de Strings</h1>
+    <p>Nome <input type="text" name="nome" id="nome"></p>
+    <button>Verificar</button>
+
+    <script>
+        let texto = "O meu nome é Felismino.";
+        let nome = window.document.getElementById("nome");
+        let botao = window.document.getElementsByTagName("button")[0];
+
+        nome.addEventListener("keydow", function(event){
+            console.log("Tecla pressionada: " + event.key)
+        })
+        document.write("Olá, Mundo! JavaScript")
+    </script>
+</body>
+</html>

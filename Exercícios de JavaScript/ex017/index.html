@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+        #container{
+            background-color: purple;
+            padding-left: 10px;
+            overflow: hidden;
+            width: 30px;
+        }
+
+        #items{
+            color: white;
+            display: flex;
+            column-gap: 10px;
+        }
+
+        span{
+            transition: transform 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <div id="container">
+        <div id="items">
+            <span>Eu</span>
+            <span>sou</span>
+            <span>Programador</span>
+        </div>
+    </div>
+
+    <button>Avançar</button>
+
+    <script>
+        let itens = window.document.getElementsByTagName('span');
+        let botao = window.document.getElementsByTagName('button')[0]
+        let atual = 0
+
+        botao.addEventListener('click', mudar)
+
+        function mudar(){
+            itens[0].style.transform = 'translateX(-140%)'
+            itens[1].style.transform = 'translateX(-140%)'
+            console.log(itens[0].innerHTML)
+        }
+    </script>
+</body>
+</html>

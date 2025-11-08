@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <p>Bem-vindo ao meu Site</p>
+
+        <menu>
+            <div id="icon"><span>Menu</span></div>
+
+            <div id="links">
+                <nav>
+                    <a href="#">Página Inicial</a>
+                    <a href="#">Fotos</a>
+                    <a href="#">Músicas</a>
+                    <a href="#">Contacto</a>
+                </nav>
+            </div>
+        </menu>
+    </header>
+
+    <main>
+        <h2>Bem-vindo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem corrupti ipsa accusamus obcaecati architecto impedit, dolor itaque ducimus. Unde quia ipsam sapiente officia vero molestias aliquid provident fugiat sit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est quia, ea voluptas, placeat minima voluptatum exercitationem rem doloribus adipisci illo quidem voluptatibus, pariatur maiores neque accusantium ipsum possimus sed?</p>
+
+        <h3>CSS</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, eaque. Fugiat illum maxime, a ipsa, magni architecto nobis voluptate laudantium veniam eos modi molestias expedita! Illum, at aliquam! Tempora, sapiente. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi veritatis esse illo nostrum velit molestiae sequi, itaque corrupti sed accusamus perferendis excepturi officia ipsa deserunt natus exercitationem laudantium dolore facilis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur molestias quaerat, optio, maiores neque aliquam, beatae saepe explicabo quibusdam deserunt exercitationem omnis nihil cum? Minima qui odit iure corporis asperiores!</p>
+
+        <h3>HTML</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita alias perspiciatis corrupti odio totam dolorem porro repellat architecto quam blanditiis nostrum tenetur voluptates pariatur accusantium inventore atque libero, quo perferendis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae non sint rem accusantium quaerat quisquam suscipit omnis atque delectus, quod cum dolores sed explicabo laboriosam maiores, cumque consectetur soluta facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae magnam a accusamus corporis dolor illum qui recusandae fugiat eveniet hic molestiae, nesciunt labore beatae cumque reprehenderit. Dignissimos tempora aliquam blanditiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo totam quo ipsa voluptate fugit natus voluptates repellat iusto, nobis reiciendis voluptatem cum et! Ipsum esse sapiente est, neque corporis iusto. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id eveniet nulla maiores dignissimos ea vel quos distinctio quae architecto nam ipsam aliquam, quod consectetur maxime! Quos saepe culpa harum incidunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis laboriosam aut vel sequi magnam quidem perferendis inventore autem doloribus! Eum cupiditate sapiente quidem expedita tempora magni veritatis at, sint voluptatem.</p>
+
+        <h3>JavaScript</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime praesentium voluptas magnam, temporibus ducimus cum nulla enim non accusantium autem quos libero voluptatum modi veritatis ex expedita ea quis! A. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae porro similique dolorem et praesentium harum repudiandae aliquid laborum neque, fuga architecto quam, deserunt, facilis reiciendis numquam perspiciatis quisquam qui repellendus.</p>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eum recusandae sed, maxime aut et molestias enim quisquam similique reprehenderit provident eveniet alias laboriosam tempore dolorum unde incidunt modi quo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure qui deleniti facilis officiis, nisi veritatis soluta quae obcaecati nostrum asperiores laboriosam harum explicabo, voluptas assumenda eaque aperiam impedit, rerum consectetur.</p>
+
+        <h3>PHP</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem eligendi facere sed consequatur, optio sit obcaecati harum repudiandae nisi labore, ut, vitae aliquam! Vitae dolorum saepe repellendus quaerat, illum corporis?</p>
+    </main>
+
+    <footer>
+        <span>&copy; 2025</span>
+        <span>Felismino Chico</span>
+    </footer>
+
+    <script>
+        let menu = this.document.getElementsByTagName("menu")[0];
+        let divLinks = this.document.getElementById("links");
+        let nav = window.document.getElementsByTagName("nav")[0];
+        let botaoMenu = this.document.getElementsByTagName("span")[0];
+
+        divLinks.addEventListener("click", function(event){
+            nav.style.left = "-300px";
+            nav.style.transitionDuration = ".8s";
+            divLinks.style.left = "-1000px"
+            event.stopPropagation();
+        })
+
+        nav.addEventListener("click", function(event){
+            // alert("Clicaste na Nav.")
+            event.stopPropagation();
+        })
+
+        botaoMenu.addEventListener("click", function(){
+            divLinks.style.left = '0px';
+            nav.style.left = '0px'
+            nav.style.transitionDuration = '.8s';
+        })
+
+        window.addEventListener("scroll", () => {
+            // alert("Rolaste a página.")
+            if(window.scrollY >= menu.offsetTop){
+                menu.classList.add("teste")
+            }else if(window.scrollY < menu.offsetTop){
+                menu.classList.remove("teste")
+            }
+            
+        })
+
+        console.log(menu.offsetTop)
+        console.log(window)
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: linear-gradient(to left, #3cbbff, #c2c5ff);
+}
+
+div{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, .39);
+    margin: auto;
+    min-height: 250px;
+    padding: 10px;
+    width: 300px;
+}
+
+#teste{
+    color: red;
+}
+
+h1{
+    font-weight: normal;
+    padding: 15px;
+    text-align: center;
+}
+
+fieldset{
+    border-radius: 12px;
+    padding: 10px;
+}
+
+legend{
+    font-weight: bold;
+    padding: 0px 10px;
+}
+
+p{
+    color: blue;
+    font-weight: bold;
+    margin: 16px 0px;
+}
+
+.teste2{
+    text-decoration: underline;
+}
+
+input{
+    background-color: #3cbbff52;
+    border-radius: 10px;
+}
+
+input[type=text]{
+    height: 30px;
+    width: 200px;
+}
+
+input[type=number]{
+    height: 20px;
+    width: 100px;
+}
+
+p.botao{
+    text-align: end;
+    width: 100%;
+}
+
+button{
+    background-color: #80808048;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+}

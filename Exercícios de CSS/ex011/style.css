@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@keyframes teste {
+    0%{
+        transform: scale(0.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+body{
+    background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div{
+    animation-name: teste;
+    animation-duration: 0.7s;
+    background-color: blue;
+    color: white;
+    height: 140px;
+    width: 200px;
+}

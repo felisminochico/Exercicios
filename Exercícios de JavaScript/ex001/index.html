@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            align-items: center;
+            background-color: gray;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px;
+            width: 100vw;
+        }
+
+        div{
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, .60);
+            height: 250px;
+            padding: 8px;
+            width: 300px;
+        }
+
+        button{
+            background-color: #151aff;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Nome: <input type="text" name="nome" id="nome"></p>
+        <p>Nota 1: <input type="number" name="n1" id="n1"></p>
+        <p>Nota 2: <input type="number" name="n2" id="n2"></p>
+        <button id="botao">Gerar Resultado</button>
+
+        <p>O Resultado aparecerá aqui...</p>
+    </div>
+    
+    <script>
+        let Botão = window.document.getElementById('botao');
+        let Nome = window.document.getElementsByTagName('input')[0];
+        let Nota1 = window.document.querySelector('#n1');
+        let Nota2 = window.document.getElementById('n2');
+        let Resultado = window.document.getElementsByTagName('p')[3];
+        let Média = 0;
+
+        Botão.addEventListener('click', gerarResultado);
+
+        function gerarResultado(){
+            let n = String(Nome.value);
+            let n1 = Number(Nota1.value);
+            let n2 = Number(Nota2.value);
+            Média = (n1 + n2) / 2;
+
+            Resultado.innerHTML = 'O nome digitado é ' + n + ' com a Primeira Nota de ' + n1 + ' com a Segunda Nota de ' + n2 + ' e a sua Média é ' + Média + '.';
+
+            console.log('O nome digitado é ' + n + ' com a Primeira Nota de ' + n1 + ' com a Segunda Nota de ' + n2 + ' e a sua Média é ' + Média + '.')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Mino </h1>
+    <h2>Testando...</h2>
+
+    <script>
+        teste1 = window.document.getElementsByTagName('h1')[0]
+        teste2 = window.document.getElementsByTagName('h2')[0]
+        teste1.innerHTML = teste1.innerHTML.toLowerCase()
+        let n1 = 7
+        let n2 = 3
+        let res = n1 + n2
+
+        document.write('Testando, meu nome é <strong>Felismino Chico</strong>. O Resultado entre ' + n1 + " + ", n2, " é ", res + `. JavaScript é incrível. O tipo primitivo de ${n1} é ${typeof(n1)}. Formatando o número ${n2.toFixed(3)}. E a formatação do Resultado é ${res.toFixed(2).replace(`.` , ',')}. Em seguida: ${res.toLocaleString('PT-AO', {style: 'currency', currency: 'AOA'})}`)
+        console.log(teste1.innerHTML.toUpperCase())
+        console.log()
+        console.log(typeof(null))
+    </script>
+</body>
+</html>

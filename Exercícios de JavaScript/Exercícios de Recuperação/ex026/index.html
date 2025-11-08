@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funções Construtoras</h1>
+
+    <script>
+        function Pessoa(nom, ida, peso, altura, casad){
+            this.nome = nom;
+            this.idade = ida;
+            this.peso = peso;
+            this.altura = altura;
+            this.casado = casad;
+        }
+
+        pessoa1 = new Pessoa("Felismino", 20, 72.1, 1.82, false);
+
+        Object.values(pessoa1).forEach((valor, chave) => {
+            console.log(valor)
+        })
+
+        function falar(n){
+            return "Olá, eu sou " + n;
+        }
+
+        Pessoa.prototype.dizerOla = falar;
+
+        console.log(pessoa1.dizerOla("Mino"));
+
+        console.log(pessoa1)
+    </script>
+</body>
+</html>

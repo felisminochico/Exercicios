@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funções Construtoras</h1>
+
+    <script>
+        function Ventilador(velMax){
+            this.velocidadeMaxima = velMax;
+            this.ligado = false;
+        }
+
+        const ventilador1 = new Ventilador(17);
+
+        ventilador1.cor = "Azul";
+        
+        function mostrarNome(n="Visitante"){
+            return "O teu nome é " + n;
+        }
+
+        ventilador1.ligaDesliga = function(){
+            if(this.ligado === false){
+                this.ligado = true;
+            }else{
+                this.ligado = false;
+            }
+            // console.log(this.ligado)
+            return this.ligado
+        }
+
+        console.log("A velocidade máxima é " + ventilador1.velocidadeMaxima);
+        console.log(ventilador1.ligaDesliga())
+        console.log(ventilador1.ligaDesliga())
+        console.log(ventilador1.ligaDesliga())
+
+        console.log("Separando...")
+        Object.values(ventilador1).forEach((valor, chave) => {
+            console.log(chave + ": " + valor)
+        })
+
+        Ventilador.prototype.mostreNome = mostrarNome
+
+        console.log(ventilador1.mostreNome())
+        document.write("Olá, Mu,ndo! JavaScript.")
+    </script>
+</body>
+</html>

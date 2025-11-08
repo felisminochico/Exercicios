@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+2
+    <script>
+        class Caneta{
+            constructor(ponta, altura, cor, modelo, tampada){
+                this.ponta = ponta;
+                this.altura = altura;
+                this.cor = cor;
+                this.modelo = modelo;
+                this.tampada = tampada;
+            }
+
+            rabiscar(){
+                if(this.tampada == true){
+                    console.error("ERRO: A Caneta está tampada. DESTAMPE!");
+                }else{
+                    console.log("Rabiscando...");
+                }
+            }
+
+            tampar(){
+                this.tampada = true;
+                console.log("A Caneta foi TAMPADA com êxito.");
+            }
+
+            destampar(){
+                this.tampada = false;
+                console.log("A Caneta foi DESTAMPADA com êxito.");
+            }
+        }
+
+        const caneta1 = new Caneta(0.7, 0.3, "Azul", "Mino", false);
+        console.log(caneta1);
+        for(let chave in caneta1){
+            console.log(`${chave}: ${caneta1[chave]}`);
+        }
+
+        caneta1.tampar();
+        caneta1.rabiscar();
+        caneta1.destampar()
+        caneta1.rabiscar()
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vetores e Objetos</h1>
+    <p>A função <strong>Object.values(objeto)</strong> pega os valores do Objeto passado como parâmetro e transforma-os como Vetor. E aí tu podes fazer qualquer coisa que fazes como um Vetor normal.</p>
+
+    <script>
+        let vetor = new Array(4, 7, 3, 9, 5);
+        let pessoa = {
+            nome: "Felismino",
+            idade: 20,
+            prof: "Programador",
+            linguagens: ["HTML", "CSS", "JavaScript", "PHP"]
+        }
+    
+        for(c in pessoa.linguagens){
+            console.log(pessoa.linguagens[c])
+        }
+
+        Object.values(pessoa).forEach((valor, chave) => {
+            console.log("Chave " + chave + ": O Valor é " + valor);
+        })
+
+        Object.keys(pessoa).forEach(function(valor, indice){
+            console.log(`Índice ${indice}: Valor ${valor}`)
+        })
+
+        let vetor2 = Object.entries(vetor)
+        for(let l = 0; l < vetor.length; l++){
+            for(let c = 0; c < 2; c++){
+                console.log(vetor2[l][c])
+            }
+            console.log("Break")
+        }
+
+        console.log(Object.freeze(pessoa))
+        let teste = Object.entries(pessoa)[3]
+        console.log(teste[1][1].length)
+
+        let teste2 = Object.toString(pessoa);
+        console.log(teste2)
+
+    </script>
+</body>
+</html>

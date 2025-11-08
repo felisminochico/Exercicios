@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+#container{
+    display: grid;
+    row-gap: 10px;
+}
+
+header{
+    background-color: rgb(6, 6, 71);
+    justify-self: start;
+}
+
+section{
+    background-color: yellow;
+}
+
+article{
+    background-color: red;
+}
+
+aside{
+    background-color: rgb(7, 161, 7);
+}
+
+footer{
+    background-color: rgb(6, 6, 71);
+}

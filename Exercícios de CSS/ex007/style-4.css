@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@keyframes texto{
+    0%{
+        background-position: left center;
+        background-size: 1px 300px;
+    }
+
+    50%{
+        background-position: center center;
+        background-size: 250px 300px;
+    }
+
+    100%{
+        background-position: right center;
+        background-size: 1px 300px;
+        opacity: 1;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    width: 100vw;
+}
+
+div{
+    animation: texto 1.2s ease-in-out forwards;
+    align-items: center;
+    background-image: linear-gradient(to right, green, greenyellow);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 1px 300px;
+    display: flex;
+    font-size: 1.6em;
+    height: 200px;
+    justify-content: center;
+    width: 300px;
+}
+
+span{
+    animation: texto 1ms 1s forwards;
+    opacity: 0;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body style="font-family: sans-serif;">
+    <h1>Variaveis Compostas</h1>
+
+    <p><input type="number" name="numero" id="numero" max="100" min="0"><input type="button" value="Adicionar" id="botao" onclick="adicionarValor(Number(numero.value))"><input type="button" value="Ver"></p>
+
+    <div id="valores">
+        <p id="mostrar-valores"></p>
+    </div>
+    <div id="msg-erro">
+        <p id="erro"></p>
+    </div>
+
+    <script>
+        let numero = document.getElementsByName("numero")[0];
+        let botaoAdicionar = window.document.querySelectorAll("input#botao")[0];
+        let botaoVer = window.document.getElementsByTagName("input")[2]
+        let mensagemErro = document.getElementById("msg-erro");
+        let mostrarValores = window.document.getElementById('mostrar-valores');
+        let vetor = [];
+
+        botaoVer.addEventListener("click", verValores);
+
+        function adicionarValor(m){
+            if(numero.value.length == 0){
+                mostrarValores.style.display = 'none'
+                window.document.getElementById('erro').style.display = 'block'
+                window.document.getElementById('erro').innerHTML = "<strong style='color: red;'>ERRO: </strong>O Campo está vazio."
+                numero.focus()
+            }else if(numero.value < 0 || numero.value > 100){
+                mostrarValores.style.display = 'none';
+                window.document.getElementById('erro').style.display = 'block'
+                window.document.getElementById('erro').innerHTML = "<strong style='color: red;'>ERRO: </strong>O Valor não pode ser menor que 0 ou maior que 100.";
+                numero.value = '';
+                numero.focus()
+            }else if(vetor.indexOf(m) == -1){
+                mostrarValores.style.display = 'block'
+                window.document.getElementById('erro').style.display = 'none';
+                vetor.push(m)
+                numero.value = ''
+                numero.focus()
+                mostrarValores.innerHTML = "Valor <strong>" + m + "</strong> adicionado.";
+            }else if(vetor.indexOf(m) != -1){
+                window.document.getElementById('erro').style.display = 'block'
+                window.document.getElementById('erro').innerHTML = "<strong style='color: red;'>ERRO: </strong>O Valor "+ m + " já existe dentro da lista.";
+                numero.value = '';
+            }
+        }
+
+        function verValores(){
+            mostrarValores.innerHTML = ""
+            for(let contador in vetor){
+                mostrarValores.innerHTML += vetor[contador] + " "
+            }
+        }
+
+        let vetor2 = [3, 6, 2, 7, 4];
+        if(vetor2.indexOf(1) == -1){
+            console.log("Valor adicionado.")
+        }else if(vetor2.indexOf(1) != -1){
+            console.log("Valor existente")
+        }
+    </script>
+</body>
+</html>

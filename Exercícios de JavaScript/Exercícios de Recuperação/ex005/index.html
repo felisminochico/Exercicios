@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        #unicos{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <h2>Criando tags dinamicamente</h2>
+
+    <div>
+
+    </div>
+
+    <script>
+        var parágrafo = window.document.createElement("p");
+        var div = window.document.getElementsByTagName("div")[0];
+        let novaImagem = window.document.createElement("img");
+        
+        parágrafo.innerHTML = "Este é um conteúdo criado dinamicamente.";
+        novaImagem.src = 'foto-1.png';
+        novaImagem.setAttribute("width", "200px");
+        novaImagem.setAttribute("id", "unicos");
+
+        div.appendChild(parágrafo)
+        div.appendChild(novaImagem)
+    </script>
+</body>
+</html>

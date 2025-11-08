@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@keyframes loading{
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+div{
+    animation: loading 1s infinite;
+    border: 10px solid gray;
+    border-top-width: 10px;
+    border-top-style: solid;
+    border-top-color: blue;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}

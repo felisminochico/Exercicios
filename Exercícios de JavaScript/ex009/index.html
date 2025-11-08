@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Jogo de Sabedoria</h1>
+        <p>Aprimore os teus conhecimentos aqui</p>
+        <nav><span id="pontos">Pontos: Não disponível</span> <span id="vidas">Vidas: Não disponível</span></nav>
+    </header>
+
+    <main>
+        <h1>Nível 1 - Fácil</h1>
+        <h2 id="titulo-1">Quanto é 4 x 4?</h2>
+        <section id="section-1">
+            <p><span class="alineas-section-1">A:</span> <button class="resultados-section-1" onclick="primeiroResultado(6)">6</button></p>
+            <p><span class="alineas-section-1">B:</span> <button class="resultados-section-1" onclick="primeiroResultado(20)">20</button></p>
+            <p><span class="alineas-section-1">C:</span> <button onclick="primeiroResultado(32)" class="resultados-section-1">32</button></p>
+            <p><span class="alineas-section-1">D:</span> <button class="resultados-section-1" onclick="primeiroResultado(16)">16</button></p>
+        </section>
+
+        <h2 id="titulo-2">Quanto é 27 + 33</h2>
+        <section id="section-2">
+            <p><span class="alineas-section-2">A:</span> <button class="resultados-section-2" onclick="segundoResultado(50)">50</button></p>
+            <p><span class="alineas-section-2">B:</span> <button class="resultados-section-2" onclick="segundoResultado(63)">63</button></p>
+            <p><span class="alineas-section-2">C:</span> <button class="resultados-section-2" onclick="segundoResultado(60)">60</button></p>
+            <p><span class="alineas-section-2">D:</span> <button class="resultados-section-2" onclick="segundoResultado(57)">57</button></p>
+        </section>
+        
+        <h2 id="titulo-3">Quanto é 80 / 20</h2>
+        <section id="section-3">
+            <p><span>B:</span> <button onclick="terceiroResultado(24)" class="resultados-section-3">24</button></p>
+            <p><span>C:</span> <button onclick="terceiroResultado(38)" class="resultados-section-3">38</button></p>
+            <p><span>A:</span> <button onclick="terceiroResultado(40)" class="resultados-section-3">40</button></p>
+            <p><span>D:</span> <button onclick="terceiroResultado(42)" class="resultados-section-3">42</button></p>
+        </section>
+
+        <h2 id="titulo-4">Quanto é 54 - 36</h2>
+        <section id="section-4">
+            <p><span>A:</span> <button onclick="quartoResultado(36)" class="resultados-section-4">36</button></p>
+            <p><span>B:</span> <button onclick="quartoResultado(18)" class="resultados-section-4">18</button></p>
+            <p><span>C:</span> <button onclick="quartoResultado(32)" class="resultados-section-4">32</button></p>
+            <p><span>D:</span> <button onclick="quartoResultado(22)" class="resultados-section-4">22</button></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pequeno Sistema de Jogo de Sabedoria</p>
+        <p>Desenvolvido por Felismino Chico</p>
+        <p>&copy; 2024</p>
+    </footer>
+
+    <script src="teste.js"></script>
+</body>
+</html>

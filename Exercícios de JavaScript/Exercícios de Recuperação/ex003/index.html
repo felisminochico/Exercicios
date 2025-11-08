@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 name="mino">Olá, Mundo!</h1>
+    <p name="teste">Estou estudando sobre <strong>DOM</strong></p>
+
+    <div id="teste3">Testando apenas...</div>
+
+    <div style="margin-bottom: 20px;">
+        <button>Clique aqui</button>
+    </div>
+
+    <script>
+        let div = window.document.querySelectorAll("div#teste3")[0];
+        div.innerHTML = '<strong>Mudando o texto</strong>'
+        let botão = window.document.getElementsByTagName("button")[0]
+
+        botão.addEventListener("click", function(){
+            alert("Clicaste no Botão")
+        })
+
+        // document.write(window.document.body)
+        // console.log(window.document.body.children)
+    </script>
+</body>
+</html>

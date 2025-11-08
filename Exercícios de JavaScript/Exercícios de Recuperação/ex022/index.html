@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+
+        #caixa{
+            background-color: rgba(10, 10, 80);
+            border-radius: 10px;
+            height: 100px;
+            /* position: relative; */
+            /* transition-duration: 1s; */
+            width: 100px;
+        }
+
+        #conteudo{
+            height: 1000px;
+        }
+
+        .fixo{
+            left: 0px;
+            position: fixed;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>requestAnimationFrame()</h1>
+
+    <div id="caixa"></div>
+
+    <div id="conteudo"></div>
+
+    <script>
+        let caixa = window.document.getElementById("caixa");
+        let posicao = 0;
+        let posicaoOriginal = caixa.offsetTop;
+
+        function animar(){
+            posicao += 10;
+            caixa.style.left = posicao + 'px';
+
+            if(posicao < 300){
+                requestAnimationFrame(animar)
+            }
+        }
+        requestAnimationFrame(animar);
+
+        function colar(){
+            if(posicaoOriginal <= window.scrollY){
+                caixa.classList.add("fixo");
+                requestAnimationFrame(colar)
+            }else{
+                caixa.classList.remove("fixo")
+            }
+        }
+        requestAnimationFrame(colar);
+
+        window.addEventListener("scroll", colar)
+        console.log(posicaoOriginal)
+        document.write("Olá, Mundo! JavaScript")
+    </script>
+</body>
+</html>

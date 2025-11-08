@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+            /* overflow: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <p>Nome <input type="text" autocomplete="off" name="nome" id="nome"></p>
+    <p><button>Enviar</button></p>
+
+    <div id="caixa">
+
+    </div>
+    
+    <script>
+        let nome = this.document.querySelector("input");
+        let botao = this.document.getElementsByTagName("button")[0];
+        let caixa = this.document.getElementById("caixa");
+        //\
+        botao.addEventListener("click", function(event){
+            if(/^\p{Lu}\p{Ll}{2,}(\s\p{L}{1}\p{Ll}{1,2})?\s\p{Lu}\p{Ll}{2,}$/u.test(nome.value)){
+                caixa.innerHTML = "Nome válido!";
+            }else{
+                caixa.innerHTML = "Nome inválido!";
+            }
+        })
+        console.log(caixa)
+        document.write("Olá, Mundo! JavaScript");
+    </script>
+</body>
+</html>

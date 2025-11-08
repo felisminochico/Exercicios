@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+div > img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+div{
+    outline: 5px solid red;
+}
+
+img{
+    transform: scale(1.3);
+}

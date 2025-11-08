@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+}
+
+header{
+    background-color: rgb(49, 42, 114);
+    color: white;
+    padding: 20px 10px 28px 10px;
+    text-align: center;
+
+    h1{
+        font-weight: normal;
+        padding-bottom: 8px;
+    }
+}
+
+main{
+    background-color: white;
+    padding: 16px 8px;
+}
+
+div#opcoes{
+    display: grid;
+    margin: auto;
+    row-gap: 20px;
+    width: 350px;
+}
+
+div#opcoes > div#formulario{
+    display: grid;
+    row-gap: 10px;
+
+    p{
+        input, select{
+            padding: 3px;
+        }
+    }
+}
+
+div#opcoes > div#botoes{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+div#opcoes > div#botoes > button{
+    cursor: pointer;
+    padding: 10px;
+}
+
+div#tabela{
+    margin: 16px auto 0px auto;
+    width: 350px;
+}
+
+footer{
+    background-color: rgb(49, 42, 114);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+}

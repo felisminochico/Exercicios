@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <a href="pag02.html" target="_self">Próxima</a>
+    <button>Voltar</button>
+
+    <div>
+        Resultado...
+    </div>
+
+    <script>
+        window.document.body.style.fontFamily = 'sans-serif'
+        let botao = document.getElementsByTagName('button')[0] 
+        // botao = window.history.back()
+        console.log("Página 1")
+        let hora = 0
+        let minutos = 0
+        let segundos = 0
+
+        let Resultado = window.document.getElementsByTagName('div')[0]
+        
+        setInterval(function(){
+            segundos++
+            if(segundos == 60){
+                segundos = 0;
+                minutos++
+            }
+
+            Resultado.innerHTML = hora + ':' + minutos + ":" + segundos
+        }, 1000)
+    </script>
+</body>
+</html>

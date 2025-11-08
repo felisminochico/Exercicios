@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Condições</h1>
+    <input type="text" name="valor" id="valor"> <br> <br>
+    <button onclick="verificar()">Verificar</button> <br> <br>
+    <script>
+        opção = document.getElementById('valor');
+
+        function verificar(){
+            switch(opção.value){
+                case "Mino": 
+                    document.write("Olá, sou o ", opção.value)
+                    break
+                case "Máquina":
+                    document.write("Olá, sou o ", opção.value)
+                    break
+                case "Odes":
+                    document.write("Olá, sou o ", opção.value)
+                    break
+                default: {
+                    document.write("O nome " + opção.value, " não faz parte da Empresa.")
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

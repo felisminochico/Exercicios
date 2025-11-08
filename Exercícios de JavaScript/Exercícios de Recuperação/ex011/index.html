@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            font-weight: normal;
+            text-align: center;
+        }
+
+        table{
+            background-color: white;
+            border-collapse: collapse;
+            color: black;
+            margin: auto;
+        }
+        table, td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo da Velha</h1>
+
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <p><input type="number" id="numero" name="numero" min="1" max="9"><button>Enviar</button></p>
+
+    <p id="msg-fim"></p>
+    <p id="msg-erro"></p>
+
+    <script>
+        // alert("Olá, Mundo!");
+        let tabela = window.document.getElementsByTagName("table")[0];
+        let dadosTabela = window.document.getElementsByTagName("td");
+        let numero = window.document.querySelector("input#numero");
+        let numeroMatriz = Number(numero);
+        let botaoEnviar = window.document.getElementsByTagName("button")[0];
+        let mensagemFimJogo = window.document.getElementById("msg-fim");
+        let mensagemErro = window.document.getElementById("msg-erro");
+        let vezJogador = 1
+        let valorJogadorX = "<b style='color: red;'>x</b>"
+        let valorJogadorO = "<b style='color: blue;'>o</b>"
+
+        for(let c = 0; c < dadosTabela.length; c++){
+            dadosTabela[c].setAttribute("id", `dado-${c}`);
+        }
+
+        function funcaoErro(){
+            mensagemErro.innerHTML = "<strong style='color: red;'>ERRO:</strong> Posição " + Number(numero.value) + " ocupada.";
+            console.error(`A posição ${Number(numero.value)} já está ocupada.`)
+        }
+
+        function funcaoEmpate(vetor, num, valorJogX, valorJogO){
+            vetor[num - 1].innerHTML = valorJogO;
+            mensagemFimJogo.innerHTML = "Empate para o jogo.";
+            for(c = 0; c < vetor.length; c++){
+                if(!(vetor[c].innerHTML.length === valorJogX.length || vetor[c].innerHTML.length === valorJogO.length)){
+                    vetor[c].style.display = 'none';
+                }
+            }
+            botaoEnviar.disabled = true;
+        }
+
+        //Função para verificar Empate do Jogo.
+        function verificarEmpate(){
+            //Empate da segunda linha-X e última-O
+            if(((dadosTabela[3].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[5].innerHTML.length === valorJogadorX.length)) && ((dadosTabela[6].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length) && ((dadosTabela[7].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length) && ((Number(numero.value) == 7 || Number(numero.value) == 8) || (Number(numero.value) == 9))))){
+                return true;
+            //Empate da primeira linha-O e segunda-X
+            }else if(((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[1].innerHTML.length === valorJogadorO.length) && ((dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[2].innerHTML.length === valorJogadorO.length) && ((Number(numero.value) == 1 || Number(numero.value) == 2) || (Number(numero.value) == 3)))) && ((dadosTabela[3].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[5].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Empate da primeira linha-O e última-X
+            }else if((((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[1].innerHTML.length === valorJogadorO.length) && (dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[2].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 1 || Number(numero.value) == 2) || (Number(numero.value) == 3))) && ((dadosTabela[6].innerHTML.length === valorJogadorX.length && dadosTabela[7].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Empate da segunda linha-O e última-X
+            }else if((((dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[4].innerHTML.length === valorJogadorO.length || dadosTabela[5].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 4 || Number(numero.value) == 5) || (Number(numero.value) == 6))) && ((dadosTabela[6].innerHTML.length === valorJogadorX.length && dadosTabela[7].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Empate para primeira coluna-X e segunda-O    
+            }else if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[3].innerHTML.length === valorJogadorX.length) && (dadosTabela[6].innerHTML.length === valorJogadorX.length)) && (((dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[4].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 2 || Number(numero.value) == 5) || (Number(numero.value) == 8)))){
+                return true;
+            //Empate para primeira coluna-X e última-O
+            }else if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[3].innerHTML.length === valorJogadorX.length) && (dadosTabela[6].innerHTML.length === valorJogadorX.length)) && (((dadosTabela[2].innerHTML.length === valorJogadorO.length || dadosTabela[5].innerHTML.length === valorJogadorO.length) && (dadosTabela[5].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 3 || Number(numero.value) == 6) || (Number(numero.value) == 9)))){
+                return true;
+            //Empate para segunda coluna-X e última-O
+            }else if(((dadosTabela[1].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[7].innerHTML.length === valorJogadorX.length)) && (((dadosTabela[2].innerHTML.length === valorJogadorO.length || dadosTabela[5].innerHTML.length === valorJogadorO.length) && (dadosTabela[5].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 3 || Number(numero.value) == 6) || (Number(numero.value) == 9)))){
+                return true;
+            //Empate para primeira coluna-O e segunda-X
+            }else if((((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[3].innerHTML.length === valorJogadorO.length) && (dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[6].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 1 || Number(numero.value) == 4) || (Number(numero.value) == 7))) && ((dadosTabela[1].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[7].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Empate para primeira coluna-O e última-X
+            }else if((((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[3].innerHTML.length === valorJogadorO.length) && (dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[6].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 1 || Number(numero.value) == 4) || (Number(numero.value) == 7))) && ((dadosTabela[2].innerHTML.length === valorJogadorX.length && dadosTabela[5].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Empate para segunda coluna-O e última-X
+            }else if((((dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[4].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 2 || Number(numero.value) == 5) || (Number(numero.value) == 8))) && ((dadosTabela[2].innerHTML.length === valorJogadorX.length && dadosTabela[5].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            }
+        }
+
+        //Função para Verificar as Linhas do Jogador X se estão certas.
+        function verificarLinhaJogadorX(){
+            //Primeira Linha
+            if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[1].innerHTML.length === valorJogadorX.length) && (dadosTabela[2].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Segunda Linha
+            }else if(((dadosTabela[3].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[5].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Terceira Linha
+            }else if(((dadosTabela[6].innerHTML.length === valorJogadorX.length && dadosTabela[7].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Primeira Coluna
+            }
+        }
+
+        //Função para Verificar as Colunas do Jogador X se estão certas.
+        function verificarColunaJogadorX(){
+            //Primeira Coluna
+            if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[3].innerHTML.length === valorJogadorX.length) && (dadosTabela[6].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Segunda Coluna
+            }else if(((dadosTabela[1].innerHTML.length === valorJogadorX.length && dadosTabela[4].innerHTML.length === valorJogadorX.length) && (dadosTabela[7].innerHTML.length === valorJogadorX.length))){
+                return true;
+            //Terceira Coluna
+            }else if(((dadosTabela[2].innerHTML.length === valorJogadorX.length && dadosTabela[5].innerHTML.length === valorJogadorX.length) && (dadosTabela[8].innerHTML.length === valorJogadorX.length))){
+                return true;
+            }
+        }
+
+        //Função para Verificar as Linhas do Jogador O se estão certas.
+        function verificarLinhaJogadorO(){
+            //Primeira Linha
+            if(((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[1].innerHTML.length === valorJogadorO.length) && (dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[2].innerHTML === valorJogadorO.length)) && ((Number(numero.value) == 1 || Number(numero.value) == 2) || (Number(numero.value) == 3))){
+                return true;
+            //Segunda Linha
+            }else if((((dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[4].innerHTML.length === valorJogadorO.length || dadosTabela[5].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 4 || Number(numero.value) == 5) || (Number(numero.value) == 6)))){
+                return true;
+            //Terceira Linha
+            }else if(((dadosTabela[6].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length) && ((dadosTabela[7].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length) && ((Number(numero.value) == 7 || Number(numero.value) == 8) || (Number(numero.value) == 9))))){
+                return true;
+            }
+        }
+
+        //Função para Verificar as Colunas do Jogador O se estão certas.
+        function verificarColunaJogadorO(){
+            //Primeira Coluna
+            if((((dadosTabela[0].innerHTML.length === valorJogadorO.length || dadosTabela[3].innerHTML.length === valorJogadorO.length) && (dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[6].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 1 || Number(numero.value) == 4) || (Number(numero.value) == 7)))){
+                return true;
+            //Segunda Coluna
+            }else if((((dadosTabela[1].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[4].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 2 || Number(numero.value) == 5) || (Number(numero.value) == 8)))){
+                return true;
+            //Terceira Coluna
+            }else if((((dadosTabela[2].innerHTML.length === valorJogadorO.length || dadosTabela[5].innerHTML.length === valorJogadorO.length) && (dadosTabela[5].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 3 || Number(numero.value) == 6) || (Number(numero.value) == 9)))){
+                return true;
+            }
+        }
+
+        //Função para mudar o Valor do Jogo ao clicar no Botão
+        function mudarValor(){
+            let resultadoEmpate = verificarEmpate();
+            let linhaX = verificarLinhaJogadorX();
+            let colunaX = verificarColunaJogadorX();
+            let linhaO = verificarLinhaJogadorO();
+            let colunaO = verificarColunaJogadorO();
+
+            if(Number(numero.value) < 1 || Number(numero.value) > 9){
+                mensagemErro.innerHTML = "<strong>Erro:</strong> Número " + Number(numero.value) + " inválido."; 
+            }else if(Number(numero.value) == 1 && dadosTabela[0].innerHTML != 1){
+                funcaoErro();
+            }else if(Number(numero.value) == 2 && dadosTabela[1].innerHTML != 2){
+                funcaoErro();
+            }else if(Number(numero.value) == 3 && dadosTabela[2].innerHTML != 3){
+                funcaoErro();
+            }else if(Number(numero.value) == 4 && dadosTabela[3].innerHTML != 4){
+                funcaoErro();
+            }else if(Number(numero.value) == 5 && dadosTabela[4].innerHTML != 5){
+                funcaoErro();
+            }else if(Number(numero.value) == 6 && dadosTabela[5].innerHTML != 6){
+                funcaoErro();
+            }else if(Number(numero.value) == 7 && dadosTabela[6].innerHTML != 7){
+                funcaoErro();
+            }else if(Number(numero.value) == 8 && dadosTabela[7].innerHTML != 8){
+                funcaoErro();
+            }else if(Number(numero.value) == 9 && dadosTabela[8].innerHTML != 9){
+                funcaoErro();
+            }else if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[1].innerHTML.length === valorJogadorX.length) && (dadosTabela[2].innerHTML.length === valorJogadorX.length)) && (((dadosTabela[3].innerHTML.length === valorJogadorO.length || dadosTabela[4].innerHTML.length === valorJogadorO.length) && (dadosTabela[5].innerHTML.length === valorJogadorO.length || dadosTabela[3].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 6 || Number(numero.value) == 5) || (Number(numero.value) == 4)))){
+                //Função para Empate da primeira linha-X e segunda-O.
+                funcaoEmpate(dadosTabela, Number(numero.value), valorJogadorX, valorJogadorO);
+            }else if(((dadosTabela[0].innerHTML.length === valorJogadorX.length && dadosTabela[1].innerHTML.length === valorJogadorX.length) && (dadosTabela[2].innerHTML.length === valorJogadorX.length)) && (((dadosTabela[6].innerHTML.length === valorJogadorO.length || dadosTabela[7].innerHTML.length === valorJogadorO.length) && (dadosTabela[7].innerHTML.length === valorJogadorO.length || dadosTabela[8].innerHTML.length === valorJogadorO.length)) && ((Number(numero.value) == 7 || Number(numero.value) == 8) || (Number(numero.value) == 9)))){
+                //Função para Empate da primeira linha-X e última-O.
+                funcaoEmpate(dadosTabela, Number(numero.value), valorJogadorX, valorJogadorO);
+            }else if((linhaX == true || colunaX == true) && !(linhaO == true)){
+                mensagemFimJogo.innerHTML = "Jogador X venceu o Jogo. Parabéns!!!";
+            }else if(resultadoEmpate == true){
+                funcaoEmpate(dadosTabela, Number(numero.value), valorJogadorX, valorJogadorO);
+            }else if(Number(numero.value) == 1 && vezJogador == 1){
+                dadosTabela[0].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 1 && vezJogador == 2){
+                dadosTabela[0].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 2 && vezJogador == 1){
+                dadosTabela[1].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 2 && vezJogador == 2){
+                dadosTabela[1].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 3 && vezJogador == 1){
+                dadosTabela[2].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 3 && vezJogador == 2){
+                dadosTabela[2].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 4 && vezJogador == 1){
+                dadosTabela[3].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 4 && vezJogador == 2){
+                dadosTabela[3].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 5 && vezJogador == 1){
+                dadosTabela[4].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 5 && vezJogador == 2){
+                dadosTabela[4].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 6 && vezJogador == 1){
+                dadosTabela[5].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 6 && vezJogador == 2){
+                dadosTabela[5].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 7 && vezJogador == 1){
+                dadosTabela[6].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 7 && vezJogador == 2){
+                dadosTabela[6].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 8 && vezJogador == 1){
+                dadosTabela[7].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 8 && vezJogador == 2){
+                dadosTabela[7].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }else if(Number(numero.value) == 9 && vezJogador == 1){
+                dadosTabela[8].innerHTML = valorJogadorX;
+                vezJogador = 2;
+            }else if(Number(numero.value) == 9 && vezJogador == 2){
+                dadosTabela[8].innerHTML = valorJogadorO;
+                vezJogador = 1;
+            }
+                 
+            // console.log(dadosTabela[0].innerHTML.length == valorJogadorX.length)
+            // console.log(typeof(dadosTabela[0].innerHTML.length), typeof(valorJogadorX.length))
+        }
+
+
+            // mensagemFimJogo.innerHTML = "O Valor de X é " + valorJogadorX + " e o valor de O é " + valorJogadorO;
+
+        botaoEnviar.addEventListener("click", mudarValor);
+        document.write("Olá, Mundo! Sou Felismino Chico e alego que o meu Site está em desenvolvimento. Obrigado!!!");
+    </script>
+</body>
+</html>

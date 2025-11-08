@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <form action="teste.php" method="post">
+        <p>Nome <input type="text" name="nome" id="nome"></p>
+        <p>Idade <input type="number" name="Idade" id="idade"></p>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="msg"></div>
+
+    <script>
+        let form = window.document.getElementsByTagName("form")[0];
+        let nome = window.document.getElementById("nome");
+        let idade = window.document.getElementById("idade");
+        let botaoEnviar = window.document.getElementsByTagName("button")[0];
+        let mensagem = window.document.getElementById("msg")
+
+        form.addEventListener("submit", function(event){
+            if(nome.value.length == 0 || idade.value.length == 0){
+                mensagem.innerHTML = "ERRO: Os campos estão vazios";
+                event.preventDefault();
+                console.log(event.target)
+                console.log(this)
+            }else if(/^\p{Lu}\p{Ll}{2,}$/u.test(nome.value) === false){
+                mensagem.innerHTML = "Nome inválido!";
+                console.log("Nome inválido.")
+                event.preventDefault();
+            }else{
+                mensagem.innerHTML = "Campo enviado com sucesso!";
+            }
+        })
+        document.write("Olá, Mundo! JavaScript");
+    </script>
+</body>
+</html>

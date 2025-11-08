@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+
+    <script>
+        class Pessoa{
+            constructor(nome, idade, peso, altura){
+                this.nome = nome;
+                this.idade = idade;
+                this.peso = peso;
+                this.altura = altura;
+            }
+
+            falar(){
+                console.log(`Olá! Eu sou ${this.nome}, tenho ${this.idade} anos de idade, peso ${this.peso}Kg e tenho ${this.altura} metros.`);
+            }
+        }
+
+        const pessoa1 = new Pessoa("Felismino", 20, 88.5, 1.86);
+        console.log(pessoa1)
+
+        for(let chave in pessoa1){
+            console.log(`${chave.replace(chave.substring(0, 1), chave.slice(0, 1).toUpperCase())}: ${pessoa1[chave]}`);
+        }
+
+        let teste = "daniel";
+        console.log(teste.substring(0, 1).toUpperCase())
+        console.log(teste.indexOf("n"))
+        console.log(teste.slice(0, 1))
+        console.log(teste.indexOf(teste.slice(0, 1)));
+        console.log(teste.replace(teste.slice(0, 1), teste.slice(0, 1).toUpperCase()))
+    </script>
+</body>
+</html>

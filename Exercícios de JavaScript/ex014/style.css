@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+@keyframes carrossel1 {
+    to{
+        transform: translateY(-600px);
+    }
+}
+
+@keyframes carrossel2 {
+    to{
+        transform: translateY(-200px);
+    }
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+}
+
+h1{
+    color: white;
+    font-weight: normal;
+    padding: 12px 0px;
+    text-align: center;
+}
+
+div#container{
+    background-color: white;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    width: 500px;
+}
+
+div#container > div{
+    
+}
+
+.filho-1{
+    animation-name: carrossel1;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    background-color: red;
+    height: 200px;
+    width: 500px;
+}
+
+.filho-2{
+    animation-name: carrossel2;
+    animation-duration: 3s;
+    animation-delay: 3.1s;
+    animation-fill-mode: forwards;
+    background-color: purple;
+    height: 200px;
+    width: 500px;
+}
+
+.filho-3{
+    background-color: green;
+    height: 200px;
+    width: 500px;
+}

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body{
+    background-color: gray;
+    font-family: sans-serif;
+}
+
+#container{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    height: 150px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+}
+
+.filhos{
+    height: 140px;
+    margin: auto;
+    position: relative;
+    transition-duration: 3s;
+    transition-property: margin-left;
+    width: 280px;
+}
+
+#filho-1{
+    background-color: purple;
+}
+
+#filho-2{
+    background-color: green;
+}
+
+#filho-3{
+    background-color: red;
+}
+
+#filho-4{
+    background-color: orange;
+}

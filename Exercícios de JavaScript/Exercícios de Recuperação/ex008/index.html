@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funções</h1>
+    <p>Número 1 <br> <input type="number" name="numero1" id="numero1"></p>
+    <p>Número 2 <br> <input type="number" name="numero2" id="numero2"></p>
+    <input type="button" value="Somar" onclick="somar(numero1.value, numero2.value)">
+    <input type="button" value="Multiplicar" name="teste" onclick="multiplicação(numero1.value, numero2.value)">
+    <div>
+        Reusltado...
+    </div>
+
+    <script>
+        let reusltado = window.document.getElementsByTagName("div")[0];
+        let botaoMultiplicar = window.document.getElementsByName("teste")[0];
+        let res = 0;
+        let n1 = window.document.getElementById("numero1");
+        let n2 = window.document.getElementById("numero2");
+
+        let multiplicação = function (a, b){
+            var x = parseInt(a);
+            var y = parseInt(b);
+            res = x * y;
+            reusltado.innerHTML = "O resultado da Multiplicação é " + res
+            return res;
+        }
+
+        function somar(a, b){
+            reusltado.innerHTML = `A Soma entre ${a} + ${b} é igual a ${Number(a) + Number(b)}`;
+        }
+
+        console.log(res)
+
+    </script>
+</body>
+</html>

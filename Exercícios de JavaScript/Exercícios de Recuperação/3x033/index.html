@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oá, Mundo!</h1>
+
+    <script>
+        // console.log("Olá, Mundo!");
+        function Carro(marca, cor){
+            this.marca = marca;
+            this.cor = cor;
+
+            this.andar = ()=>{
+                console.log("Olá, estou andando");
+            }
+        }
+
+        const carro1 = new Carro("Toyota", "azul");
+
+        console.log(carro1.andar())
+
+        class Pessoa{
+            constructor(nome, idade, altura, peso){
+                this.nome = nome;
+                this.idade = idade;
+                this.altura = altura;
+                this.peso = peso;
+            }
+
+            falar(){
+                console.log(`Olá, eu sou ${this.nome}! Tenho ${this.idade} anos de idade, peso ${this.peso} Kg e tenho ${this.altura} metros`);
+            }
+        }
+
+        const pessoa1 = new Pessoa("Felismino", 20, 1.81, 72);
+        pessoa1.cor = "Preto"
+
+        for(let c in pessoa1){
+            console.log(c + ": " + pessoa1[c])
+        }
+
+        console.log(pessoa1.falar())
+    </script>
+</body>
+</html>

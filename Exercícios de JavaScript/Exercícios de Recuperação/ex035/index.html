@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 35</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+
+    <script>
+        (function executar(){
+            console.log("Eu sou uma função que é executada automaticamente.")
+        })()
+
+        class Pessoa{
+            constructor(nome, idade){
+                this.nome = nome;
+                this.idade = idade;
+                this.tipo = "qualquer";
+            }
+
+            apresentar(){
+                console.log("Olá, sou " + this.nome + " e tenho " + this.idade + " anos de idade. Sou " + this.tipo + " de Casa.");
+            }
+        }
+
+        class Dono extends Pessoa{
+            constructor(nome, idade){
+                super(nome, idade);
+                this.tipo = "Dono";
+            }
+        }
+
+        class Visita extends Pessoa{
+            constructor(nome, idade){
+                super(nome, idade);
+                this.tipo = "Visita";
+            }
+        }
+
+        const p1 = new Pessoa("Felismino", 20);
+        const d1 = new Dono("Maria", 29);
+        const $v1 = new Visita("Manuela", 19);
+
+        const obj = {
+            teste: "Novo Objeto"
+
+        }
+
+        p1.apresentar()
+        d1.apresentar();
+        $v1.apresentar();
+
+        Object.setPrototypeOf(obj, d1);
+        console.log(p1)
+        console.log(obj)
+        obj.apresentar()
+
+        function soma(v1, v2){
+            let n1 = v1
+            let n2 = v2;
+
+            console.log("A Soma é igual à " + (n1 + n2))
+        }
+
+        function multiplicar(v1, v2){
+            let n1 = v1;
+            let n2 = v2;
+            console.log("O produto entre " + n1 + " x " + n2 + " é " + n1 * n2)
+        }
+
+        function operacoes(funcao, v1, v2){
+            console.log("Chamando a Função...");
+
+            funcao(v1, v2);
+        }
+
+        operacoes(soma, 5, 5);
+        operacoes(multiplicar, 3, 4)
+    </script>
+</body>
+</html>

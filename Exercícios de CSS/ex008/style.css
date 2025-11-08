@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+    /* font: italic normal 1.4em Arial, Helvetica, sans-serif; */
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+}
+
+#container{
+    background-color: white;
+    margin: auto;
+    width: 300px;
+}
+
+.filhos-1{
+    background-color: rebeccapurple;
+    height: 300px;
+    width: 300px;
+}
+
+.filhos-2{
+    background-color: rgba(10, 10, 10, 0.349);
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+}
+
+button{
+    cursor: pointer;
+    position: absolute;
+}

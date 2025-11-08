@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: gray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+
+    <script>
+        let vetor = [1, 2, 30, 10, 8, 7, 6];
+        let vetor2 = new Array(1, 2, 3);
+        let vetor3 = Array(1, 2, 3);
+        let vetor4 = Array.from(vetor3);
+        let vetor5 = [...vetor2];
+        let vetor6 = Array(12);
+        let vetor7 = [
+            {a: 2, b: 8},
+            {a: 2, b: 5},
+            {a: 1, b: 9},
+            {a: 4, b: 7},
+            {a: 2, b: 3}
+        ]
+
+        console.log(vetor);
+        // console.log(vetor.splice(2, 1));
+        console.log(vetor6)
+        console.log(vetor6.fill(14, 0))
+        console.log(vetor.sort((a, b) => a - b));
+        console.log(vetor7)
+        console.log(vetor7[0]["a"])
+
+        let vetorFilter = vetor.filter(function(valor, chave, vetor){
+            return valor > 3;
+        })
+        console.log(vetorFilter)
+
+        let vetorFilter2 = vetor7.filter((valor, chave) => {
+            return valor.b > 5;
+        })
+        console.log(vetorFilter2)
+
+        let vetorFind = vetor7.find((valor, chave) => {
+            return valor.a == 2;
+        })
+        console.log(vetorFind)
+
+        // vetor.forEach((valor) => {
+        //     console.log(valor + 2);
+        // })
+
+        let vetorMap = vetor.map(valor => valor * 2);
+        console.log(vetorMap);
+
+        let vetorReduce = vetor.reduce(function(acc, valor){
+            acc = acc + valor;
+            return acc;
+        })
+        console.log(typeof(vetorReduce))
+        console.log(vetorReduce)
+
+        let acumuladora = 0;
+        vetor.forEach((valor, indice) => {
+            acumuladora += valor;
+        })
+        console.log(acumuladora);
+
+        let testeFind = vetor.find(valor => valor == 2);
+        console.log(typeof(testeFind))
+        document.write("Olá, Mundo!")
+    </script>
+</body>
+</html>

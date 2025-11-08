@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+}
+
+header{
+    background-color: purple;
+    color: white;
+    z-index: 2;
+
+    h1{
+        font-weight: normal;
+        padding: 20px 0px 6px 0px;
+        text-align: center;
+    }
+
+    p{
+        padding-bottom: 12px;
+        text-align: center;
+    }
+
+    menu{
+        background-color: rgb(4, 4, 80);
+        /* left: 0px; */
+        /* height: 400px; */
+        padding: 12px;
+        position: relative;
+
+        div#icon{
+            /* position: relative; */
+            /* position: sticky;
+            top: 0px; */
+
+            span{
+                cursor: pointer;
+            }
+        }
+
+        div#links{
+            background-color: rgba(0, 0, 0, .278);
+            height: 100vh;
+            left: -1000px;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            z-index: 3;
+
+            nav{
+                background-color: rgb(12, 89, 12);
+                height: 100vh;
+                left: -300px;
+                position: fixed;
+                top: 0px;
+                width: 240px;
+                z-index: 4;
+                
+                a{
+                    border-top: 1px solid black;
+                    border-top-left-radius: 10px;
+                    color: white;
+                    display: block;
+                    padding: 14px;
+                    text-decoration: none;
+                }
+    
+                a:hover{
+                    background-color: rgb(4, 4, 80);
+                }
+            }
+        }
+    }
+}
+
+main{
+    /* filter: blur(6px); */
+    background-color: white;
+    padding: 10px;
+    z-index: 2;
+
+    h2{
+        color: purple;
+        font-size: 2.2em;
+        font-weight: normal;
+        padding: 14px 0px;
+        text-align: center;
+    }
+
+    p{
+        line-height: 1.5em;
+        margin-bottom: 18px;
+        text-align: justify;
+        text-indent: 36px;
+    }
+
+    h3{
+        color: rgb(4, 4, 80);
+        font-size: 1.5em;
+        font-weight: normal;
+        padding: 12px 0px;
+    }
+}
+
+.teste{
+    background-color: red;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+}
+
+.teste2{
+    background-color: blue;
+    position: static;
+}
+
+footer{
+    background-color: purple;
+    color: white;
+    display: grid;
+    row-gap: 12px;
+    padding: 18px 10px;
+    text-align: center;
+}
