@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    width: 100%;
+
+    div{
+        width: 200px;
+        height: 150px;
+    }
+
+    #caixa-1{
+        background-color: aquamarine;
+    }
+
+    #caixa-2{
+        background-color: blueviolet;
+    }
+
+    #caixa-3{
+        background-color: chartreuse;
+    }
+
+    #caixa-4{
+        background-color: chocolate;
+    }
+
+    #caixa-5{
+        background-color: cornflowerblue;
+    }
+
+    #caixa-6{
+        background-color: green;
+    }
+}
