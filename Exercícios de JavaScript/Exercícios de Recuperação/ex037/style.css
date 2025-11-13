@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: gray;
+}
+
+header{
+    background-color: rgb(32, 32, 87);
+    padding: 12px 8px;
+    position: sticky;
+    top: 0px;
+
+    nav{
+        display: flex;
+        gap: 0px 16px;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+main{
+    display: grid;
+    gap: 30px 0px;
+    padding: 16px 8px;
+
+    section{
+        display: grid;
+        gap: 20px 0px;
+
+        h2{
+            color: rgb(32, 32, 87);
+            padding: 6px 0px 0px 0px;
+        }
+
+        p{
+            line-height: 1.5em;
+            text-align: justify;
+            text-indent: 30px;
+        }
+    }
+}
